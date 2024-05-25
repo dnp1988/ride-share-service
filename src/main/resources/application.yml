@@ -1,0 +1,16 @@
+spring.application.name: ride-share-service
+
+server.error.include-message: on_param
+server.port: 8080
+
+# LOGGING
+##########
+logging.level.root: error
+
+# SERVICE
+##########
+ride-share:
+  pending-ride:
+    queue-init-size: 10 # Initial size of Pending Rides Queue
+  revise-pending-rides:
+    run-rate-millis: 30000 # Milliseconds between each run of the Job that goes through the Pending Rides Queue
